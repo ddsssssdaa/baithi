@@ -1,0 +1,110 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 400px; /* Đặt chiều cao cố định cho banner */
+}
+
+.banner img {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    animation: slideshow 15s infinite;
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy khung */
+}
+
+.banner img:nth-child(1) { animation-delay: 0s; }
+.banner img:nth-child(2) { animation-delay: 5s; }
+.banner img:nth-child(3) { animation-delay: 10s; }
+
+@keyframes slideshow {
+    25% { opacity: 1; transform: scale(1.05);}
+    50% { opacity: 0; transform: scale(1);}
+}
+
+main {
+    padding: 20px;
+}
+
+.tours {
+    text-align: center;
+}
+
+.tour-list {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các tour xuống dòng khi không đủ chỗ */
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa các tour */
+}
+
+.tour {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px; /* Đặt chiều rộng cho mỗi tour */
+    overflow: hidden;
+}
+
+.tour img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    height: 200px;
+}
+
+.tour:hover {
+    transform: scale(1.03);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.price {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content{
+    max-width: 960px;
+    margin: 0 auto;
+}
